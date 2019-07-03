@@ -26,23 +26,11 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    /*$host = "d1code.database.windows.net";
-    $user = "debugvelop";
-    $pass = "Dcode1Task";
-    $db = "d1code";
-
-    try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }*/
-
-    try {
+    try{
     $conn = new PDO("sqlsrv:server = tcp:d1code.database.windows.net,1433; Database = d1code", "debugvelop", "Dcode1Task");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
-    catch (PDOException $e) {
+    catch (PDOException $e){
     print("Error connecting to SQL Server.");
     die(print_r($e));
     }
