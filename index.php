@@ -27,7 +27,7 @@
  </form>
  <?php
     try{
-    $conn = new PDO("sqlsrv:server = tcp:d1code.database.windows.net,1433; Database = d1code", "debugvelop", "Dcode1Task");
+    $conn = new PDO("sqlsrv:server = tcp:d1code.database.windows.net,1433; Database =<db name>", "<db username>", "<db password>");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch (PDOException $e){
